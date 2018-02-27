@@ -1,0 +1,57 @@
+// Sophia Xia
+// APCS2 pd1
+// HW09 -- Yaaasss Queens
+// 2018-02-26
+
+-------------------- 2X2 --------------------
+Solvable?: No
+
+Explanation: There is no way to put down 2 Queens on a 2X2 grid without being in eachothers line of movement. After one Queen is placed down at any position on the grid, all the other spaces are in her line of movement. This means that only one queen can be placed on the grid.
+
+Number of Solutions: 0
+
+
+-------------------- 3X3 --------------------
+Solvable?: No
+
+Explanation: There can only be one or two Queens placed on a 3X3 grid. There are three different kinds of spaces the first Queen can be placed. In the center, in the corner, and in the middle of a side of the grid. When placed in the center, all other spaces are in the Queen's line of movement. When placed in the corner or middle of a side, there are 2 spots another Queen can be placed. Once placed, all spaces are in a Queen's line of movement.  
+
+Number of Solutions: 0
+
+
+-------------------- 4X4 --------------------
+Solvable?: Yes
+
+Explanation: There are three different starting points the Queen can be placed. It can be placed in a corner, in the middle of a side, or in middle. Placing it in the corner only allows for at most 3 Queens to be placed. Starting in the middle of a side allows four Queens to be placed. Going in an L fashion (think of how knights move) it is possible to choose 2 spaces to put a Queen without putting any of them another Queen's line of movement. After that, there is only one spot to put the fourth Queen in place. If the first Queen is placed in middle, there are 4 possible spots to put another Queen. There is a corner option and a side option. Picking one of each will allow rwo more Queens to be placed. However, that is only 3 and there are no more spaces available to put more Queens.
+
+Number of Solutions: 1 (Assuming rotations and mirror images don't count)
+
+
+-------------------- 5X5 --------------------
+Solvable?: Yes
+
+Explanation: Building off of the solution for a 4X4 grid, we can add a row and column to it to make it five by five. There is only 1 solution for the 4X4 grid and 4 different ways be can add a row and column to the 4X4 grid (once you rotate or flip it they are actually the same so in reality it doesn't matter much). Once completed, it should be discovered that only the new corner formed can have a Queen placed there. Since our solution for a 4X4 grid already had 4 Queens placed, adding another one in will make it 5.
+
+Number of Solutions: 1
+
+
+-------------------- 6X6 --------------------
+Solvable?: Yes
+
+Explanation: I tried building off of my solution for 5X5 just like I built off 4X4 for 5X5, but it didn't work. I decided to start at the position right next to the top left corner in the first row. Then I went one space down and 2 spaces over (L movement) to put down my next Queen. I continued until I got to the edge of the grid. Then I moved to the third row because each row and column must have only one Queen there. I placed another in the first column and continued in the L fashion and succesfully placed 6 Queens.
+
+Number of Solutions: 1
+
+
+-------------------- 7X7 --------------------
+Solvable?: Yes
+
+Explanation: I built off of 6X6 just like I did from 4X4 to 5X5 and found two solutions to 7X7.
+
+Number of Solutions: 2
+
+
+-------------------- 8X8 --------------------
+Solvable?: Yes
+Explanation: Courtesy of Lily for the answer because I couldn't figure it out at all even after an extended amount of time.
+Number of Solutions: 1
