@@ -47,8 +47,8 @@ public class QueenBoard{
 
     /***
      * <General description>
-     * precondition: 
-     * postcondition: 
+     * precondition: Space must have a value of 0 and also must be in the matrixb.addQueen(1,0);
+     * postcondition: Space gains a value of 1 and all spaces horizontal or diagonal from it lose a value of 1
      */
     private boolean addQueen(int row, int col){
 	if(_board[row][col] != 0){
@@ -72,8 +72,8 @@ public class QueenBoard{
 
     /***
      * <General description>
-     * precondition: 
-     * postcondition: 
+     * precondition: Space must have a value of 1 and also must be in the matrix
+     * postcondition: Space's value becomes 0 and all spaces horizontal or diagonal from it gain a value of 1
      */
     private boolean removeQueen(int row, int col){
 	if ( _board[row][col] != 1 ) {
@@ -119,11 +119,13 @@ public class QueenBoard{
     {
 	QueenBoard b = new QueenBoard(5);
 	System.out.println(b);
-	b.addQueen(3,0);
 	b.addQueen(0,1);
+	b.addQueen(1,3);
+	b.addQueen(2,0);
+	b.addQueen(3,2);
 	System.out.println(b);
-	b.removeQueen(3,0);
-	System.out.println(b);
+	//b.removeQueen(3,0);
+	//System.out.println(b);
     }
     
 }//end class
