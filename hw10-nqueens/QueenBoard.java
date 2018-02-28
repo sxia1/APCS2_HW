@@ -6,8 +6,7 @@
 public class QueenBoard{
     private int[][] _board;
     
-    public QueenBoard( int size ) 
-    {
+    public QueenBoard(int size){
 	_board = new int[size][size];
     }
 
@@ -21,6 +20,8 @@ public class QueenBoard{
      * returns false.
      */
     public boolean solve(){
+	int col = 0;
+	
 	return false;
     }
     
