@@ -1,0 +1,19 @@
+Sophia Xia
+APCS2 pd1
+HW11 -- Get on the Bus
+2018-02-28
+
+Use a Recursive Brute Force Approach
+
+Use a For loop and go through every single space on the Chess board
+for starting points.
+Put in a counter for moves, Knight's move order will be marked
+down with this
+Then add the Knight and do a recursive call for every single move the
+Knight can make.
+Make sure to remove the Knight after each recursive call to make room
+for the next one.
+If the number of moves are made is equal to the total number of spaces
+then print the solution and return true.
+If no more moves can be made and less than the number of spaces of moves
+have been made, return false.
