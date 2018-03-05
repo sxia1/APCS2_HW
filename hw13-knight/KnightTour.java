@@ -117,9 +117,8 @@ class TourFinder
 	//and recursively generate tour possibilities from current pos
 	else {
 
-	    int oX = x;
-	    int oY = y;
-	    int oMoves = moves;
+	    board[x][y] = moves;
+	    
 	    /* YOUR KODE HERE */
 
 	    //delay(1000); //uncomment to slow down enough to view
@@ -157,12 +156,10 @@ class TourFinder
 	    //h (x-1, y-2)
 	    findTour(x-1, y-2, moves +1);
 	    
-	    /* YOUR KODE HERE */
 
 	    //If made it this far, path did not lead to tour, so back up.
-
-	    findTour(oX, oY, oMoves);
-	    /* YOUR KODE HERE */
+	    board[x][y] = 0;
+	    findTour(x, y, moves);
 
 	    System.out.println( this ); //refresh screen
 	}
