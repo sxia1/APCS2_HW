@@ -105,17 +105,21 @@ class TourFinder
 	if ( solved ) System.exit(0);
 
 	//primary base case: tour completed
-	if ( /* YOUR KODE HERE */ ) {
-	    /* YOUR KODE HERE */
+	if ( moves == sideLength ) {
+	    solved = true;
 	}
 	//other base case: stepped off board or onto visited cell
-	if ( /* YOUR KODE HERE */ ) {
-	    /* YOUR KODE HERE */
+	if ( board[x][y] != 0 ) {
+	    solved = false;
+	    System.out.println(this);
 	}
 	//otherwise, mark current location
 	//and recursively generate tour possibilities from current pos
 	else {
 
+	    int oX = x;
+	    int oY = y;
+	    int oMoves = moves;
 	    /* YOUR KODE HERE */
 
 	    //delay(1000); //uncomment to slow down enough to view
@@ -129,11 +133,35 @@ class TourFinder
 	      g . . . b
 	      . h . a .
 	      ======================================*/
+	    //a (x+1, y-2)
+	    findTour(x+1, y-2, moves +1);
+	    
+	    //b (x+2, y-1)
+	    findTour(x+2, y-1, moves +1);
 
+	    //c (x+2, y+1)
+	    findTour(x+2, y+1, moves +1);
+
+	    //d (x+1, y+2)
+	    findTour(x+1, y+2, moves +1);
+
+	    //e (x-1, y+2)
+	    findTour(x-1, y+2, moves +1);
+
+	    //f (x-2, y-2)
+	    findTour(x-1, y-2, moves +1);
+
+	    //g (x-2, y-1)
+	    findTour(x-2, y-1, moves +1);
+
+	    //h (x-1, y-2)
+	    findTour(x-1, y-2, moves +1);
+	    
 	    /* YOUR KODE HERE */
 
 	    //If made it this far, path did not lead to tour, so back up.
 
+	    findTour(oX, oY, oMoves);
 	    /* YOUR KODE HERE */
 
 	    System.out.println( this ); //refresh screen
@@ -165,8 +193,8 @@ public class KnightTour
 	System.out.println( tf );
 
 	//for random starting location, use lines below:
-	//int startX = 2 + (int)( n * Math.random() );
-	//int startY = 2 + (int)( n * Math.random() );
+	int startX = 2 + (int)( n * Math.random() );
+	int startY = 2 + (int)( n * Math.random() );
 	//tf.findTour( startX, startY, 1 );   // 1 or 0 ?
 
 	//for fixed starting location, use line below:
