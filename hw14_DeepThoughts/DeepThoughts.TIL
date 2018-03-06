@@ -1,0 +1,22 @@
+// Sophia Xia
+// APCS2 pd1
+// HW14 -- Probing the Depths...
+// 2018-03-06
+
+Section Uno:
+Q1: From any starting position, can an open tour always be found? Explain.
+    An open tour cannot always be found from any starting position. The chances of it being possible seems very slim.
+
+Q2: Same, but for closed tour.
+    If a closed tour exists for that specific board, then the starting position does not matter. Regardless of where the tour starts, there will be a working path found.
+
+Q3: How do you explain the increase in execution time as n increases?
+    The execution time increases as n increases, because the number of possible paths that the Knight can take increases. That results in more paths to test and backtrack from.
+
+Q4: Thoughts on optimization?
+    Using Warnsdorff's method, the Knight will choose the move that gives it the least number of subsequent moves/possibilities. This will reduce the amount of backtracking needed.
+
+Section Deux:
+State your cleanest algo for finding your way out of a maze.
+      
+      From the starting position, determine which direction a viable path exists. If there is more than one path, check to see if there exists two spaces in front of it to determine if that path should be chosen. If there is, recursively call the method for those paths. When a deadend is reached, just backtrack and test out a different path. If all of the paths dont work, then there is no solution(return nothing or false depending). Once a solution is found, it should return nothing or true (depending on the return type decided on).
