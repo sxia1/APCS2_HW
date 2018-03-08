@@ -9,8 +9,9 @@
 
   Mean execution times for boards of size n*n:
   n=5   .021s    over 1000 executions 
-  n=6   1m46s    over 01 executions
-  n=7   __s    over __ executions
+  n=6   .295s    over 10 executions
+  n=7   .948s    over 10 executions
+  Over an hour...
   n=8   __s    over __ executions
   ======================================*/
 
@@ -188,16 +189,18 @@ public class KnightTour
 	System.out.println( "[2J" ); 
 
 	//display board 
-	System.out.println( tf );
+	//System.out.println( tf );
 
-	//for random starting location, use lines below:
-	//for (int i = 0; i < 10; i++){
+
+	for (int i = 0; i < 10; i++){
+	    //for random starting location, use lines below:
 	    int startX = 2 + (int)( n * Math.random() );
 	    int startY = 2 + (int)( n * Math.random() );
-	    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
-	    //}
-	//for fixed starting location, use line below:
-	//tf.findTour( 2, 2, 1 );
+	    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+
+	    //for fixed starting location, use line below:
+	    //tf.findTour( 2, 2, 1 );
+	}
 
     }//end main()
 
