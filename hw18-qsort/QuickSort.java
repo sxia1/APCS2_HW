@@ -1,8 +1,8 @@
-//Clyde "Thluffy" Sinclair
-//APCS2 pd0
+//Sophia Xia
+//APCS2 pd1
 //HW18 -- QuickSort
-//2018-03-13t
-  
+//2018-03-13
+
 /*****************************************************
  * class QuickSort
  * Implements quicksort algo to sort an array of ints in place
@@ -63,9 +63,10 @@ public class QuickSort
    *****************************************************/
   public static void qsort( int[] d )
   { 
-
+      
   }
 
+  
   //you may need a helper method...
 
 
