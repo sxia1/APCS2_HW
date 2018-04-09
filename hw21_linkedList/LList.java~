@@ -1,0 +1,60 @@
+// Sophia Xia, Selina Zou
+// APCS2 pd1
+// HW21c -- Rockin’ Through the Night
+// 2018-03-19
+
+public class LList implements List{
+    
+    public LLNode car;
+    public LLNode cdr;
+    public int size;
+    
+    //add node to list, containing input String as its data
+    public boolean add( String x ){
+	//if the node is empty
+	if (car.getCargo() == null){
+	    //set the value of the node to the String
+	    car.setCargo(x);
+	    return true;
+	}
+	//otherwise set car to the next node and
+	//cdr to the next node of that node
+	else{
+	    car = car.getNext();
+	    cdr = car.getNext();
+	    return add(x);
+	}
+    } 
+
+    //return data in element at position i
+    public String get( int i ){
+	for(int num = 0; num < i; i++){
+	    car = car.getNext();
+	    cdr = car.getNext();
+	}
+	return car.getCargo();
+    }
+
+    //overwrite data in element at position i
+    public String set( int i, String x ){
+	for(int num = 0; num < i; i++){
+	    car = car.getNext();
+	    cdr = car.getNext();
+	}
+	return car.setCargo(x);
+    }
+
+    //return length of list
+    public int size(){
+	int num = 0;
+	for(; car.getCargo() != null; num++){
+	    car = car.getNext();
+	    cdr = car.getNext();
+	}
+	return num;
+    }
+
+    public static void main (String[] args){
+    }
+    
+}
