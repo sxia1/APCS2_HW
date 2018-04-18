@@ -1,0 +1,33 @@
+//Hasif Ahmed, Sophia Xia
+//APCS2 pd1
+//HW #35 -- ...Nor Do Aussies
+//2018-04-17
+import java.util.ArrayList;
+
+public class ALQueue<T>{
+  ArrayList<T> _queue;
+
+  public ALQueue(){
+    _queue = new ArrayList<T>(); //instantiate ArrayList
+  }
+
+  public T dequeue(){
+    T ret = _queue.remove(0); //O(n) time because the ArrayList has to make a new array and shift everything over
+    return ret;
+  }
+
+  public void enqueue(T x){
+    _queue.add(x); //O(n) time because the ArrayList has to make a new array and shift everything over
+  }
+
+  public boolean isEmpty(){
+    return _queue.size() == 0;
+  }
+
+  public T peekFront(){
+    return _queue.get(0);
+  }
+
+
+
+}

@@ -1,0 +1,136 @@
+//Team Cookie Monsters
+//Roster: Cheryl Qian, Sophia Xia
+//APCS2 pd1
+//HW36 -- Now Let’s Consider You Lot at Fake Terry’s
+//18-04-17
+
+/*****************************************************
+ * class RQueue
+ * A linked-list-based, randomized queue
+ * (a collection with FIIDKO property)
+ *
+ *       -------------------------------
+ *   end |  --->   Q U E U E   --->    | front
+ *       -------------------------------
+ *
+ *  linkages point opposite direction for O(1) en/dequeuing
+ *            N <- N <- ... <- N <- N
+ *      _end -^                     ^- _front
+ *
+ ******************************************************/
+
+//getValue()
+//getNext()
+//setValue(T newCargo)
+//setNext(LLNode<T> newNext)
+//toString()
+
+public class RQueue<T> implements Queue<T>{
+
+  //instance variables
+  private LLNode<T> _front, _end;
+  private int _size;
+
+
+  // default constructor creates an empty queue
+  public RQueue() {
+    _front = null;
+    _end = null;
+    _size = 0;
+    _end.setNext(_front);
+  }//end default constructor
+
+
+  public void enqueue( T enQVal ){
+    LLNode<T> newNode = new LLNode<T>();
+    newNode.setValue(enQVal);
+    if(_front == null){
+      _front = newNode;
+    }
+    else{
+      _end.setNext(newNode);
+    }
+  }//end enqueue()
+
+
+  // remove and return thing at front of queue
+  // assume _queue ! empty
+  public T dequeue(){
+    LLNode<T> temp = _front;
+    sample();
+    temp = temp.getNext();
+    
+  }//end dequeue()
+
+
+  public T front() {
+    return _front.getValue();
+  }
+
+
+  /******************************************
+  * void sample() -- a means of "shuffling" the queue
+  * Algo:
+  * ...
+  * 
+  ******************************************/
+  public void sample (){
+    int r = Math.random() * _size;
+    for ( int i = 0; i < r; i++ )
+      _front = _front.getNext();
+  }//end sample()
+  
+
+  public boolean isEmpty(){
+    return _size == 0;
+  } //O(?)
+
+
+  // print each node, separated by spaces
+    public String toString(){ 
+      int i = 0;
+      LLNode<T> temp = _front;
+      while ( i < _size ) {
+        System.out.println(temp);
+        temp = temp.getNext();
+     	 }
+    }//end toString()
+
+  
+  
+  //main method for testing
+  public static void main( String[] args )
+  {
+    Queue<String> PirateQueue = new RQueue<String>();
+    
+    System.out.println("\nnow enqueuing..."); 
+    PirateQueue.enqueue("Dread");
+    PirateQueue.enqueue("Pirate");
+    PirateQueue.enqueue("Robert");
+    PirateQueue.enqueue("Blackbeard");
+    PirateQueue.enqueue("Peter");
+    PirateQueue.enqueue("Stuyvesant");
+    
+    System.out.println("\nnow testing toString()..."); 
+    System.out.println( PirateQueue ); //for testing toString()...
+    
+    System.out.println("\nnow dequeuing..."); 
+    System.out.println( PirateQueue.dequeue() );
+    System.out.println( PirateQueue.dequeue() );
+    System.out.println( PirateQueue.dequeue() );
+    System.out.println( PirateQueue.dequeue() );
+    System.out.println( PirateQueue.dequeue() );
+    System.out.println( PirateQueue.dequeue() );
+    
+    System.out.println("\nnow dequeuing fr empty queue..."); 
+    System.out.println( PirateQueue.dequeue() );
+    
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+    
+    ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
+    
+  }//end main
+  
+}//end class RQueue
+
+    
